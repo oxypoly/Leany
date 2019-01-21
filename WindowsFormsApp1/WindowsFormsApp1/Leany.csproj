@@ -92,6 +92,12 @@
     <Compile Include="LeanyHome.Designer.cs">
       <DependentUpon>LeanyHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="Defaulcef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Defaulcef.Designer.cs">
+      <DependentUpon>Defaulcef.cs</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="LeanyHome.resx">
       <DependentUpon>LeanyHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Defaulcef.resx">
+      <DependentUpon>Defaulcef.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Startup.resx">
       <DependentUpon>Startup.cs</DependentUpon>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CefSharp;
+using CefSharp.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Leany
 {
-    public partial class Leany_Home : MetroFramework.Forms.MetroForm
+    public partial class Defaulcef : MetroFramework.Forms.MetroForm
     {
-        public Leany_Home()
+        public Defaulcef()
         {
             InitializeComponent();
             int duration = 400;//in milliseconds
@@ -36,17 +38,25 @@ namespace Leany
             timer.Start();
         }
 
-        private void Leany_Home_Load(object sender, EventArgs e)
+        ChromiumWebBrowser chrome;
+
+        private void OneNote_Load(object sender, EventArgs e)
         {
+            CefSettings settings = new CefSettings();
+            Cef.Initialize(settings);
+            weblink.Text = "https://oxypoly.github.io/Leany/";
+            this.webframe.Controls.Add(chrome);
+            chrome.Dock = DockStyle.Fill;
+            chrome.AddressChanged += Chrome_AddressChanged;
 
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void Chrome_AddressChanged(object sender, AddressChangedEventArgs e)
         {
-            this.Hide();
-            Defaulcef sistema = new Defaulcef();
-            sistema.ShowDialog();
-            this.Close();
+            this.Invoke(new MethodInvoker(() =>
+            {
+                weblink.Text = e.Address;
+            }));
         }
     }
 }
