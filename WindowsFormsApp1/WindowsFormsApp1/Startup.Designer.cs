@@ -115,7 +115,7 @@
             // 
             // metroTile1
             // 
-            this.metroTile1.Location = new System.Drawing.Point(384, 239);
+            this.metroTile1.Location = new System.Drawing.Point(384, 286);
             this.metroTile1.Name = "metroTile1";
             this.metroTile1.Size = new System.Drawing.Size(230, 46);
             this.metroTile1.TabIndex = 8;
@@ -126,7 +126,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(637, 308);
+            this.ClientSize = new System.Drawing.Size(637, 355);
             this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);

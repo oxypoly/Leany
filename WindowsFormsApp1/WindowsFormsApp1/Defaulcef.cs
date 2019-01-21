@@ -19,8 +19,10 @@ namespace Leany
             InitializeComponent();
             int duration = 400;//in milliseconds
             int steps = 100;
-            Timer timer = new Timer();
-            timer.Interval = duration / steps;
+            Timer timer = new Timer
+            {
+                Interval = duration / steps
+            };
 
             int currentStep = 0;
             timer.Tick += (arg1, arg2) =>
@@ -42,13 +44,30 @@ namespace Leany
 
         private void OneNote_Load(object sender, EventArgs e)
         {
+            if (Cef.IsInitialized){
+                ;goto cefstarted;
+            }
+            else
+            {
+                goto cefstarting;
+            }
+
+            cefstarting:
+
             CefSettings settings = new CefSettings();
             Cef.Initialize(settings);
             weblink.Text = "https://oxypoly.github.io/Leany/";
+            chrome = new ChromiumWebBrowser(weblink.Text);
             this.webframe.Controls.Add(chrome);
             chrome.Dock = DockStyle.Fill;
             chrome.AddressChanged += Chrome_AddressChanged;
 
+        cefstarted:
+            weblink.Text = "https://oxypoly.github.io/Leany/";
+            chrome = new ChromiumWebBrowser(weblink.Text);
+            this.webframe.Controls.Add(chrome);
+            chrome.Dock = DockStyle.Fill;
+            chrome.AddressChanged += Chrome_AddressChanged;
         }
 
         private void Chrome_AddressChanged(object sender, AddressChangedEventArgs e)
@@ -57,6 +76,24 @@ namespace Leany
             {
                 weblink.Text = e.Address;
             }));
+        }
+
+        private void webgo_Click(object sender, EventArgs e)
+        {
+            chrome.Load(weblink.Text);
+        }
+
+        private void webframe_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Leany_Home sistema = new Leany_Home();
+            sistema.ShowDialog();
+            this.Close();
         }
     }
 }

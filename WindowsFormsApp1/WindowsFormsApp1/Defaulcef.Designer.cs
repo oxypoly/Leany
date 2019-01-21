@@ -35,6 +35,7 @@
             this.weblink = new MetroFramework.Controls.MetroTextBox();
             this.webgo = new MetroFramework.Controls.MetroTile();
             this.webrld = new MetroFramework.Controls.MetroTile();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // btnback
@@ -69,10 +70,14 @@
             // 
             // webframe
             // 
+            this.webframe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webframe.Location = new System.Drawing.Point(-3, 33);
             this.webframe.Name = "webframe";
             this.webframe.Size = new System.Drawing.Size(804, 394);
             this.webframe.TabIndex = 3;
+            this.webframe.Paint += new System.Windows.Forms.PaintEventHandler(this.webframe_Paint);
             // 
             // weblink
             // 
@@ -87,6 +92,7 @@
             // 
             // webgo
             // 
+            this.webgo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.webgo.Location = new System.Drawing.Point(-2, 427);
             this.webgo.Name = "webgo";
             this.webgo.Size = new System.Drawing.Size(107, 23);
@@ -94,6 +100,7 @@
             this.webgo.Text = "Gaan";
             this.webgo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.webgo.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
+            this.webgo.Click += new System.EventHandler(this.webgo_Click);
             // 
             // webrld
             // 
@@ -105,11 +112,22 @@
             this.webrld.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.webrld.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             // 
+            // metroTile1
+            // 
+            this.metroTile1.Location = new System.Drawing.Point(637, 4);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(75, 23);
+            this.metroTile1.TabIndex = 7;
+            this.metroTile1.Text = "Terug";
+            this.metroTile1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
             // Defaulcef
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.webrld);
             this.Controls.Add(this.webframe);
             this.Controls.Add(this.webgo);
@@ -135,5 +153,6 @@
         private MetroFramework.Controls.MetroTextBox weblink;
         private MetroFramework.Controls.MetroTile webgo;
         private MetroFramework.Controls.MetroTile webrld;
+        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }
