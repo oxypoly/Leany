@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Leany
 {
-    public partial class Defaulcef : MetroFramework.Forms.MetroForm
+    public partial class OneNote : MetroFramework.Forms.MetroForm
     {
-        public Defaulcef()
+        public OneNote()
         {
             InitializeComponent();
             Console.WriteLine("Browser Geopend");
@@ -56,7 +56,7 @@ namespace Leany
             Console.WriteLine("Cef Starten");
             CefSettings settings = new CefSettings();
             Cef.Initialize(settings);
-            weblink.Text = "https://github.com/oxypoly/Leany";
+            weblink.Text = "https://www.onenote.com/notebooks";
             chrome = new ChromiumWebBrowser(weblink.Text);
             this.webframe.Controls.Add(chrome);
             chrome.Dock = DockStyle.Fill;
@@ -64,7 +64,7 @@ namespace Leany
 
         cefstarted:
             Console.WriteLine("Cef al gestart");
-            weblink.Text = "https://github.com/oxypoly/Leany";
+            weblink.Text = "https://www.onenote.com/notebooks";
             chrome = new ChromiumWebBrowser(weblink.Text);
             this.webframe.Controls.Add(chrome);
             chrome.Dock = DockStyle.Fill;
@@ -103,6 +103,11 @@ namespace Leany
         {
             chrome.Refresh();
             Console.WriteLine("Herladen");
+        }
+
+        private void webname_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

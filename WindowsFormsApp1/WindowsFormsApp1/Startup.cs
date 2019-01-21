@@ -16,8 +16,9 @@ namespace WindowsFormsApp1
         public Precheck()
         {
             InitializeComponent();
+            Console.WriteLine("Opstart component");
             int duration = 400;//in milliseconds
-            int steps = 100;
+            int steps = 70;
             Timer timer = new Timer();
             timer.Interval = duration / steps;
 
@@ -54,6 +55,7 @@ namespace WindowsFormsApp1
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("Opstarten Overslaan");
             this.Hide();
             Leany_Home sistema = new Leany_Home();
             sistema.ShowDialog();

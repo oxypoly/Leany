@@ -15,8 +15,9 @@ namespace Leany
         public Leany_Home()
         {
             InitializeComponent();
+            Console.WriteLine("Home Opgestart");
             int duration = 400;//in milliseconds
-            int steps = 100;
+            int steps = 70;
             Timer timer = new Timer();
             timer.Interval = duration / steps;
 
@@ -43,8 +44,18 @@ namespace Leany
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("CefSharp Test Opgestart");
             this.Hide();
             Defaulcef sistema = new Defaulcef();
+            sistema.ShowDialog();
+            this.Close();
+        }
+
+        private void OneNote_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("CefSharp Test Opgestart");
+            this.Hide();
+            OneNote sistema = new OneNote();
             sistema.ShowDialog();
             this.Close();
         }
