@@ -36,6 +36,7 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.SuspendLayout();
             // 
             // metroProgressSpinner1
@@ -112,11 +113,21 @@
             this.metroLabel4.TabIndex = 7;
             this.metroLabel4.Text = "Uitzoeken of Office beschikbaar is";
             // 
+            // metroTile1
+            // 
+            this.metroTile1.Location = new System.Drawing.Point(384, 239);
+            this.metroTile1.Name = "metroTile1";
+            this.metroTile1.Size = new System.Drawing.Size(230, 46);
+            this.metroTile1.TabIndex = 8;
+            this.metroTile1.Text = "Volgende";
+            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            // 
             // Precheck
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 308);
+            this.Controls.Add(this.metroTile1);
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel2);
@@ -145,6 +156,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel4;
+        private MetroFramework.Controls.MetroTile metroTile1;
     }
 }
 

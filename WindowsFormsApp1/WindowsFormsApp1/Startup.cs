@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Leany;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,6 +50,14 @@ namespace WindowsFormsApp1
         private void metroProgressSpinner1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Leany_Home sistema = new Leany_Home();
+            sistema.ShowDialog();
+            this.Close();
         }
     }
 }
